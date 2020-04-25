@@ -1,5 +1,7 @@
 # react-native-dpppt
 
+React Native lib for the Decentralised Privacy-Preserving Proximity Tracing (DP-3T) project.
+
 ## Getting started
 
 `$ yarn add https://github.com/chriamue/react-native-dpppt`
@@ -17,7 +19,6 @@ Add this to your AndroidManifest.
 <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 ```
-
 
 ```javascript
 import Dpppt from 'react-native-dpppt';

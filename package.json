@@ -1,8 +1,8 @@
 {
   "name": "react-native-dpppt",
-  "title": "React Native Dpppt",
-  "version": "1.0.0",
-  "description": "TODO",
+  "title": "React Native DP-3T",
+  "version": "0.1.2",
+  "description": "React Native lib for the Decentralised Privacy-Preserving Proximity Tracing (DP-3T) project.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,11 +13,11 @@
     "baseUrl": "https://github.com/github_account/react-native-dpppt"
   },
   "keywords": [
-    "react-native"
+    "react-native", "dp-3t", "proximity-tracing"
   ],
   "author": {
-    "name": "Your Name",
-    "email": "yourname@email.com"
+    "name": "Christian M",
+    "email": "chriamue@gmail.com"
   },
   "license": "MIT",
   "licenseFilename": "LICENSE",
