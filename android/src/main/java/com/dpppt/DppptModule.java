@@ -1,5 +1,9 @@
 package com.dpppt;
 
+import android.util.Base64;
+import java.nio.charset.StandardCharsets;
+import java.util.Date;
+
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -7,6 +11,7 @@ import com.facebook.react.bridge.Callback;
 
 import org.dpppt.android.sdk.DP3T;
 import org.dpppt.android.sdk.internal.backend.CallbackListener;
+import org.dpppt.android.sdk.internal.backend.models.ExposeeAuthData;
 
 public class DppptModule extends ReactContextBaseJavaModule {
 
@@ -23,8 +28,8 @@ public class DppptModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void init(String appId) {
-        DP3T.init(getReactApplicationContext(), appId);
+    public void init(String appId, boolean enableDevDiscoveryMode) {
+        DP3T.init(getReactApplicationContext(), appId, enableDevDiscoveryMode);
     }
 
     @ReactMethod
@@ -43,15 +48,18 @@ public class DppptModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void sendIWasExposed() {
-        DP3T.sendIWasExposed(getReactApplicationContext(), null, new CallbackListener<Void>() {
-            @Override
-            public void onSuccess(Void response) {
-            }
+    public void sendIWasExposed(Date date, String authCode) {
+        String inputBase64 = new String(Base64.encode(authCode.getBytes(StandardCharsets.UTF_8), Base64.NO_WRAP),
+                StandardCharsets.UTF_8);
+        DP3T.sendIWasExposed(getReactApplicationContext(), date, new ExposeeAuthData(inputBase64),
+                new CallbackListener<Void>() {
+                    @Override
+                    public void onSuccess(Void response) {
+                    }
 
-            @Override
-            public void onError(Throwable throwable) {
-            }
-        });
+                    @Override
+                    public void onError(Throwable throwable) {
+                    }
+                });
     }
 }

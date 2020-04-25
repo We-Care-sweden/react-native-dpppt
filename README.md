@@ -22,9 +22,9 @@ Add this to your AndroidManifest.
 import Dpppt from 'react-native-dpppt';
 
 // TODO: What to do with the module?
-Dpppt.init(APP_ID);
+Dpppt.init(APP_ID, true);
 Dpppt.start();
 Dpppt.stop();
-Dpppt.sendIWasExposed();
+Dpppt.sendIWasExposed(new Date(), 'authCode');
 Dpppt.sync();
 ```
