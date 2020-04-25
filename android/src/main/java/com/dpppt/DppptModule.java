@@ -14,7 +14,7 @@ import com.facebook.react.bridge.Arguments;
 
 import org.dpppt.android.sdk.DP3T;
 import org.dpppt.android.sdk.TracingStatus;
-import org.dpppt.android.sdk.backend.models.ExposeeAuthMethod;
+import org.dpppt.android.sdk.backend.models.ExposeeAuthMethodJson;
 import org.dpppt.android.sdk.backend.ResponseCallback;
 
 public class DppptModule extends ReactContextBaseJavaModule {
