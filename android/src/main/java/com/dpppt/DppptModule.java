@@ -1,6 +1,9 @@
 package com.dpppt;
 
+import android.net.Uri;
 import android.util.Base64;
+import android.content.Intent;
+import android.provider.Settings;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 
@@ -74,5 +77,11 @@ public class DppptModule extends ReactContextBaseJavaModule {
                     public void onError(Throwable throwable) {
                     }
                 });
+    }
+
+    @ReactMethod
+    public void requestIgnoreBatteryOptimizations() {
+        startActivity(new Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS,
+                Uri.parse("package:" + getReactApplicationContext().getPackageName())));
     }
 }
