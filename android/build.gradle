@@ -73,7 +73,7 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
     implementation 'com.facebook.react:react-native:+'  // From node_modules
-    implementation 'org.dpppt:dp3t-sdk-android:0.1.0'
+    implementation 'org.dpppt:dp3t-sdk-android:0.1.2'
 }
 
 def configureReactNativePom(def pom) {
