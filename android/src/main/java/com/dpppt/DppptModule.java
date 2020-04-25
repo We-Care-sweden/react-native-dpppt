@@ -8,8 +8,13 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Callback;
+import com.facebook.react.bridge.Promise;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.Arguments;
+
 
 import org.dpppt.android.sdk.DP3T;
+import org.dpppt.android.sdk.TracingStatus;
 import org.dpppt.android.sdk.internal.backend.CallbackListener;
 import org.dpppt.android.sdk.internal.backend.models.ExposeeAuthData;
 
@@ -45,6 +50,17 @@ public class DppptModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void sync() {
         DP3T.sync(getReactApplicationContext());
+    }
+
+    @ReactMethod
+    public void status(Promise promise) {
+        TracingStatus tracingStatus = DP3T.getStatus(getReactApplicationContext());
+        WritableMap map = Arguments.createMap();
+        map.putInt("numberOfContacts", tracingStatus.getNumberOfContacts());
+        map.putBoolean("isAdvertising", tracingStatus.isAdvertising());
+        map.putBoolean("isReceiving", tracingStatus.isReceiving());
+        map.putLong("getLastSyncDate", tracingStatus.getLastSyncDate());
+        promise.resolve(map);
     }
 
     @ReactMethod
