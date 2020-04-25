@@ -29,4 +29,5 @@ Dpppt.start();
 Dpppt.stop();
 Dpppt.sendIAmInfected(new Date(), 'codeInputBase64');
 Dpppt.sync();
+Dpppt.status().then((status) => console.log(status))) // {"lastSyncDate": 0, "isAdvertising": true, "isReceiving": true, "numberOfContacts": 0}
 ```

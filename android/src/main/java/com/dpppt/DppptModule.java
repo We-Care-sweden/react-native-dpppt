@@ -58,7 +58,7 @@ public class DppptModule extends ReactContextBaseJavaModule {
         map.putInt("numberOfContacts", tracingStatus.getNumberOfContacts());
         map.putBoolean("isAdvertising", tracingStatus.isAdvertising());
         map.putBoolean("isReceiving", tracingStatus.isReceiving());
-        map.putDouble("getLastSyncDate", tracingStatus.getLastSyncDate());
+        map.putDouble("lastSyncDate", tracingStatus.getLastSyncDate());
         promise.resolve(map);
     }
 
