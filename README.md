@@ -25,6 +25,8 @@ import Dpppt from 'react-native-dpppt';
 
 // TODO: What to do with the module?
 Dpppt.init(APP_ID, true);
+Dpppt.requestIgnoreBatteryOptimizations();
+Dpppt.requestLocationAccess();
 Dpppt.start();
 Dpppt.stop();
 Dpppt.sendIAmInfected(new Date(), 'codeInputBase64');
