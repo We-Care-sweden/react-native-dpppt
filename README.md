@@ -27,6 +27,6 @@ import Dpppt from 'react-native-dpppt';
 Dpppt.init(APP_ID, true);
 Dpppt.start();
 Dpppt.stop();
-Dpppt.sendIWasExposed(new Date(), 'authCode');
+Dpppt.sendIAmInfected(new Date(), 'codeInputBase64');
 Dpppt.sync();
 ```
