@@ -12,7 +12,6 @@ import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.Arguments;
 
-
 import org.dpppt.android.sdk.DP3T;
 import org.dpppt.android.sdk.TracingStatus;
 import org.dpppt.android.sdk.internal.backend.CallbackListener;
@@ -67,7 +66,7 @@ public class DppptModule extends ReactContextBaseJavaModule {
     public void sendIWasExposed(Date date, String authCode) {
         String inputBase64 = new String(Base64.encode(authCode.getBytes(StandardCharsets.UTF_8), Base64.NO_WRAP),
                 StandardCharsets.UTF_8);
-        DP3T.sendIWasExposed(getReactApplicationContext(), date, new ExposeeAuthData(inputBase64),
+        DP3T.sendIWasExposed(getReactApplicationContext(), date, new ExposeeAuthData(inputBase64), null,
                 new CallbackListener<Void>() {
                     @Override
                     public void onSuccess(Void response) {
