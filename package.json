@@ -1,7 +1,7 @@
 {
   "name": "react-native-dpppt",
   "title": "React Native DP-3T",
-  "version": "0.1.2",
+  "version": "0.1.7",
   "description": "React Native lib for the Decentralised Privacy-Preserving Proximity Tracing (DP-3T) project.",
   "main": "index.js",
   "scripts": {
