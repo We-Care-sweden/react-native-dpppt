@@ -33,17 +33,17 @@ public class DppptModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void start(String appId) {
+    public void start() {
         DP3T.start(getReactApplicationContext());
     }
 
     @ReactMethod
-    public void stop(String appId) {
+    public void stop() {
         DP3T.stop(getReactApplicationContext());
     }
 
     @ReactMethod
-    public void sync(String appId) {
+    public void sync() {
         DP3T.sync(getReactApplicationContext());
     }
 
