@@ -2,7 +2,7 @@
 
 ## Getting started
 
-`$ npm install react-native-dpppt --save`
+`$ yarn add https://github.com/chriamue/react-native-dpppt`
 
 ### Mostly automatic installation
 
