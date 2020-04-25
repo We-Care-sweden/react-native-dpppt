@@ -3,6 +3,7 @@ package com.dpppt;
 import android.net.Uri;
 import android.util.Base64;
 import android.content.Intent;
+import android.Manifest;
 import android.provider.Settings;
 import androidx.core.app.ActivityCompat;
 import java.nio.charset.StandardCharsets;
