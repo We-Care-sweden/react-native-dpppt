@@ -81,7 +81,7 @@ public class DppptModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void requestIgnoreBatteryOptimizations() {
-        startActivity(new Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS,
+        getReactApplicationContext().startActivity(new Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS,
                 Uri.parse("package:" + getReactApplicationContext().getPackageName())));
     }
 }
