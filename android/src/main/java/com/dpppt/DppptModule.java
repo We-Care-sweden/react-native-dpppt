@@ -90,6 +90,6 @@ public class DppptModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void requestLocationAccess() {
         String[] permissions = new String[] { Manifest.permission.ACCESS_FINE_LOCATION };
-        ActivityCompat.requestPermissions(getReactApplicationContext(), permissions, 1);
+        ActivityCompat.requestPermissions(getReactApplicationContext().getCurrentActivity(), permissions, 1);
     }
 }
